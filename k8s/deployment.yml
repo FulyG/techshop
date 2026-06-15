@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: techshop
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: techshop
+  template:
+    metadata:
+      labels:
+        app: techshop
+    spec:
+      containers:
+      - name: techshop
+        image: fulyag/techshop:latest
+        ports:
+        - containerPort: 5001
